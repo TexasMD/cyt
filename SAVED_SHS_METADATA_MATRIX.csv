@@ -1,0 +1,140 @@
+savedSHSmetadataMatrixKey,field_or_signal,family,source_locator,artist_page,work_page,performance_page,release_page,other_page,interpretation_or_discriminator,caution
+savedSHSmetadataMatrixKey001,source_relative_path,provenance,source_files.relative_path,G,G,G,G,G,Path of saved HTML capture,Keep each capture
+savedSHSmetadataMatrixKey002,source_filename,provenance,source_files.filename,G,G,G,G,G,Browser or prior processed filename,Weak identity signal
+savedSHSmetadataMatrixKey003,source_sha256,provenance,source_files.sha256,G,G,G,G,G,Exact saved-file fingerprint,Same hash is duplicate bytes
+savedSHSmetadataMatrixKey004,source_byte_size,provenance,source_files.byte_size,G,G,G,G,G,Capture size,Technical context
+savedSHSmetadataMatrixKey005,source_modified_utc,provenance,source_files.modified_utc,G,G,G,G,G,Filesystem modified time,Not SHS publication date
+savedSHSmetadataMatrixKey006,detected_encoding,provenance,source_files.detected_encoding,G,G,G,G,G,Parser-detected encoding,Preserve original bytes
+savedSHSmetadataMatrixKey007,parser_name_version_run,provenance,parse_runs,G,G,G,G,G,Extractor identity and version,Do not rewrite old observations
+savedSHSmetadataMatrixKey008,source_snapshot_sha256,provenance,parse_runs,G,G,G,G,G,Input inventory fingerprint,Changes with inputs or decisions
+savedSHSmetadataMatrixKey009,parse_status_error,provenance,source_files.parse_status/parse_error,G,G,G,G,G,Parsed or failed page,Failure stays in review
+savedSHSmetadataMatrixKey010,document_title,document,head title,G,G,G,G,G,Saved document title,May contain site branding
+savedSHSmetadataMatrixKey011,html_language,document,html lang,G,G,G,G,G,Document UI language,Not necessarily work language
+savedSHSmetadataMatrixKey012,canonical_url,page_identity,head link rel=canonical,S,S,S,S,G,Preferred source webpage identity,Check SHS host and path
+savedSHSmetadataMatrixKey013,source_webpage_url,page_identity,cyt source URL or og:url,S,S,S,S,G,Fallback original page URL,Can be processed-page metadata
+savedSHSmetadataMatrixKey014,shs_entity_type,page_identity,canonical /artist|work|performance|release/ID,S,S,S,S,-,Provider-scoped subject type,Require valid numeric ID
+savedSHSmetadataMatrixKey015,shs_entity_id,page_identity,canonical entity path,S,S,S,S,-,Provider-scoped subject ID,Do not merge across types
+savedSHSmetadataMatrixKey016,entity_key,page_identity,source_files.entity_key,S,S,S,S,-,Type and numeric ID combined,Exact SHS identity only
+savedSHSmetadataMatrixKey017,entity_name,page_identity,h1 itemprop=name then heading,S,S,S,S,G,Visible subject name,Conflicts across captures need review
+savedSHSmetadataMatrixKey018,ranking_text_ordinal_year,page_identity,ranked h1 and semantic name,-,S,-,-,-,Ranked work heading parsed separately,Ranking is not name or identity
+savedSHSmetadataMatrixKey019,artist_canonical_path,page_signal,/artist/<numeric ID>,S,-,-,-,-,Decisive artist page signal,Page may mention works
+savedSHSmetadataMatrixKey020,work_canonical_path,page_signal,/work/<numeric ID>,-,S,-,-,-,Decisive work page signal,Page may list performances
+savedSHSmetadataMatrixKey021,performance_canonical_path,page_signal,/performance/<numeric ID>,-,-,S,-,-,Decisive performance page signal,Not a MusicDB recording ID
+savedSHSmetadataMatrixKey022,release_canonical_path,page_signal,/release/<numeric ID>,-,-,-,S,-,Decisive release page signal,Page may list tracks
+savedSHSmetadataMatrixKey023,main_heading,page_signal,main h1 or section#main h1,S,S,S,S,G,Corroborates subject name,Heading alone is weak identity
+savedSHSmetadataMatrixKey024,schema_itemtype,page_signal,itemscope itemtype,S,S,S,S,G,Person MusicGroup MusicComposition MusicRecording or MusicRelease context,Use enclosing scope
+savedSHSmetadataMatrixKey025,page_class_other,page_signal,main/login/challenge/title detection,-,-,-,-,S,Guideline documentation login Cloudflare or other,Do not force musical entity
+savedSHSmetadataMatrixKey026,cloudflare_challenge,page_signal,Just a moment plus challenge markup,-,-,-,-,S,Blocked capture rather than entity content,Review or recapture
+savedSHSmetadataMatrixKey027,cyt_page_type,page_signal,meta name=cyt:page-type,S,S,S,S,G,Processed page type including 1STREL,Derived metadata not raw SHS type
+savedSHSmetadataMatrixKey028,cyt_filename,page_signal,meta name=cyt:filename,G,G,G,G,G,Local offline name,Not source identity
+savedSHSmetadataMatrixKey029,cyt_metadata_version,page_signal,meta name=cyt:metadata-version,G,G,G,G,G,Current html-derived-v4 marker,Controls idempotency
+savedSHSmetadataMatrixKey030,artist_name,artist,artist h1 or itemprop=name,S,R,R,R,-,Artist subject or linked credit,Keep ID and role context
+savedSHSmetadataMatrixKey031,artist_birth_date,artist,dt Born or itemprop=birthDate,S,-,-,-,-,Artist biographical date,Not release date
+savedSHSmetadataMatrixKey032,artist_death_date,artist,dt Died or itemprop=deathDate,S,-,-,-,-,Artist biographical date,May be absent
+savedSHSmetadataMatrixKey033,artist_country_nationality,artist,dt Country or itemprop=nationality,S,-,-,-,-,Artist geographic trait,Country and nationality can differ
+savedSHSmetadataMatrixKey034,artist_gender,artist,dt Gender or itemprop=gender,S,-,-,-,-,Artist profile trait,Do not infer from name
+savedSHSmetadataMatrixKey035,artist_birth_name,artist,dt Birth name,S,-,-,-,-,Artist profile name,Separate from display name
+savedSHSmetadataMatrixKey036,artist_legal_personal_name,artist,dt Legal name or Personal name,S,-,-,-,-,Artist profile name variants,Do not auto-promote aliases
+savedSHSmetadataMatrixKey037,artist_aliases,artist,dt Aliases,S,-,-,-,-,Listed alternate names,Preserve raw wording and review mapping
+savedSHSmetadataMatrixKey038,artist_years_active,artist,dt Years active,S,-,-,-,-,Activity period,Not release year
+savedSHSmetadataMatrixKey039,artist_status,artist,dt Active or Status,S,-,-,-,R,Status text,Context-sensitive
+savedSHSmetadataMatrixKey040,artist_members,artist,dt Member or Members or Member of,S,-,-,-,-,Group membership relationships,Keep direction and dates if present
+savedSHSmetadataMatrixKey041,artist_affiliation_family,artist,dt Affiliation or Family,S,-,-,-,-,Artist relationship text,Do not assume identity
+savedSHSmetadataMatrixKey042,artist_related_artists,artist,dt Related artists or Related,S,-,-,-,-,Related artist links,Relation type may be unclear
+savedSHSmetadataMatrixKey043,artist_related_labels,artist,dt Related labels,S,-,-,-,-,Artist-label relationships,Label is a separate entity
+savedSHSmetadataMatrixKey044,artist_not_to_confuse,artist,dt Not to be confused with,S,R,-,-,-,Disambiguation warning,Not same-as
+savedSHSmetadataMatrixKey045,artist_tribute_to,artist,dt Tribute to,R,-,-,S,-,Tribute target artist on a release,Not same-as
+savedSHSmetadataMatrixKey046,artist_ipi,artist,dt IPI,S,R,-,-,-,Rights-society identifier,Confirm subject of number
+savedSHSmetadataMatrixKey047,work_title,work,work h1 or itemprop=name,-,S,R,R,-,Composition name,Do not equate title with recording
+savedSHSmetadataMatrixKey048,work_author,work,dt Written by or itemprop=author,-,S,R,-,-,Authorship credit,Preserve credit roles and order
+savedSHSmetadataMatrixKey049,work_composer,work,dt Music written by or itemprop=composer,-,S,R,-,-,Music-writing credit,Author may be broader
+savedSHSmetadataMatrixKey050,work_lyricist,work,dt Lyrics written by or itemprop=lyricist,-,S,R,-,-,Lyric-writing credit,Do not collapse with composer
+savedSHSmetadataMatrixKey051,work_original_writers,work,dt Original music written by or Original lyrics written by,-,S,R,-,-,Prior-work writing credit,Adaptation context matters
+savedSHSmetadataMatrixKey052,work_originally_written_by,work,dt Originally written by,-,S,R,-,-,Prior writer credit,Preserve relationship direction
+savedSHSmetadataMatrixKey053,work_iswc,work,dt ISWC,-,S,R,-,-,Work identifier,Work not performance ID
+savedSHSmetadataMatrixKey054,work_language,work,dt Language or itemprop=inLanguage,-,S,R,-,-,Work language,May describe adaptation version
+savedSHSmetadataMatrixKey055,work_composition_date,work,dt Composition date,-,S,-,-,-,Composition timing,Not first release date
+savedSHSmetadataMatrixKey056,work_copyright_date,work,dt Copyright date,-,S,-,-,-,Copyright timing,Not composition proof
+savedSHSmetadataMatrixKey057,work_publication_date,work,dt Publication date,-,S,-,-,-,Publication timing,Not necessarily first recording
+savedSHSmetadataMatrixKey058,work_publisher,work,dt Published by,-,S,-,-,-,Publisher relationship,Preserve each listed publisher
+savedSHSmetadataMatrixKey059,work_roud_number,work,dt Roud number,-,S,-,-,-,Folk song catalog number,Not SHS ID
+savedSHSmetadataMatrixKey060,work_part_of,work,dt Part of,-,S,-,-,-,Broader-work relationship,Keep parent and child IDs
+savedSHSmetadataMatrixKey061,work_parts_series,work,dt Parts or Part of series,-,S,R,-,-,Work structure or series,Keep linked IDs
+savedSHSmetadataMatrixKey062,work_adapted_from,relationship,dt Adapted from or adaptation tree,-,S,R,-,-,Derivative source-work relation,Do not infer from title
+savedSHSmetadataMatrixKey063,work_uses_parts_from,relationship,dt Uses parts from,-,S,R,-,-,Part-use source relation,Distinct from cover
+savedSHSmetadataMatrixKey064,work_recording_of,relationship,itemprop=recordingOf,-,R,S,R,-,Performance points to work,Keep subject and object IDs
+savedSHSmetadataMatrixKey065,work_version_rows,relationship,versions table near p#work-ID,-,S,R,-,-,Embedded performance list,Rows are not captured pages
+savedSHSmetadataMatrixKey066,work_adaptation_tree,relationship,#adaptation-tree and nested work IDs,-,S,R,-,-,Adaptation lineage,Scope to exact work
+savedSHSmetadataMatrixKey067,work_covers_by,relationship,Covers by section,-,S,R,-,-,Cover-performance references,Preserve source section
+savedSHSmetadataMatrixKey068,work_originally_by,relationship,Originally by label or column,-,S,R,-,-,First or source performer reference,Check exact row semantics
+savedSHSmetadataMatrixKey069,work_sampled_songs,relationship,Sampled songs or Uses samples from section,-,S,R,-,-,Sampling relation,Not equivalent to cover
+savedSHSmetadataMatrixKey070,performance_title,performance,performance h1 or itemprop=name,-,R,S,R,-,Named rendition or track,Distinct from work title
+savedSHSmetadataMatrixKey071,performing_artist,performance,itemprop=byArtist or table Performer,R,R,S,R,-,Credited performance artist,Do not split punctuation blindly
+savedSHSmetadataMatrixKey072,performance_native_id,performance,/performance/<numeric ID>,R,R,S,R,-,Exact SHS performance identifier,Embedded row may lack saved page
+savedSHSmetadataMatrixKey073,performance_release_date,performance,table Release date or datePublished,-,R,S,R,-,Release timing observation,May be partial or approximate
+savedSHSmetadataMatrixKey074,performance_released_on,performance,dt Released on,-,R,S,R,-,Named release carrying a performance,Keep release ID if linked
+savedSHSmetadataMatrixKey075,performance_written_by,performance,dt Written by,-,R,S,-,-,Writer credit repeated on rendition page,Work authorship needs work context
+savedSHSmetadataMatrixKey076,performance_recording_date,performance,dt Recording date or First recorded on,-,R,S,R,-,Recording timing,Distinct from issue date
+savedSHSmetadataMatrixKey077,performance_first_recorded_in,performance,dt First recorded in,-,R,S,-,-,First recording year or place text,Not first public release
+savedSHSmetadataMatrixKey078,performance_first_recording_role,performance,field-info First recording or native REC,-,R,S,-,-,SHS first-recording marker,Preserve source wording
+savedSHSmetadataMatrixKey079,performance_first_release_role,performance,field-info First release or native PRF,-,R,S,-,-,SHS first-release marker,Scoped row evidence required
+savedSHSmetadataMatrixKey080,first_release_performer,performance,first-event row performer,-,R,S,-,-,Performer named in scoped first row,Not automatically canonical original artist
+savedSHSmetadataMatrixKey081,first_release_year,performance,first-event row field-date,-,R,S,-,-,Year parsed from scoped first row,Date precision may be coarse
+savedSHSmetadataMatrixKey082,performance_recorded_as,relationship,itemprop=recordedAs,-,R,S,R,-,Work or artist to recording association,Follow enclosing item scope
+savedSHSmetadataMatrixKey083,performance_duration,performance,itemprop=duration,-,R,S,R,-,Duration when present,Format may vary
+savedSHSmetadataMatrixKey084,performance_live_place,performance,dt Performed in or Performed live in,-,R,S,-,-,Performance location/context,Not release geography
+savedSHSmetadataMatrixKey085,performance_video_title,performance,dt Video title,-,R,S,-,-,Linked video title,Not necessarily recording title
+savedSHSmetadataMatrixKey086,performance_info,performance,versions table Info column,-,R,S,R,-,Role and annotation text,Keep row and table context
+savedSHSmetadataMatrixKey087,performance_chart_placings,performance,dt Chart placings,-,R,S,R,-,Chart detail,Not identity or ranking probability
+savedSHSmetadataMatrixKey088,performance_other_versions,relationship,dt Other version or Other versions,-,R,S,-,-,Other renditions of related work,No same-recording inference
+savedSHSmetadataMatrixKey089,performance_other_releases,relationship,dt Other release or Other releases,-,R,S,R,-,Additional issue references,Do not merge release editions
+savedSHSmetadataMatrixKey090,performance_parts,relationship,dt Parts,-,R,S,-,-,Part-level structure,Keep exact referenced work or performance
+savedSHSmetadataMatrixKey091,performance_uses_samples,relationship,Uses samples from table column,-,R,S,-,-,Performance sample source,Typed directional link
+savedSHSmetadataMatrixKey092,release_title,release,release h1 or itemprop=name,-,R,R,S,-,Release name,May share work or track title
+savedSHSmetadataMatrixKey093,release_native_id,release,/release/<numeric ID>,-,R,R,S,-,Exact SHS release identifier,Separate from performance ID
+savedSHSmetadataMatrixKey094,release_date,release,dt Release date or itemprop=datePublished,-,R,R,S,-,Release timing,Preserve full precision
+savedSHSmetadataMatrixKey095,release_format,release,dt Format or itemprop=musicReleaseFormat,-,-,R,S,-,Physical/digital format,May apply to edition
+savedSHSmetadataMatrixKey096,release_label,release,dt Label or itemprop=label,-,-,R,S,-,Label credit,Keep label identity separate
+savedSHSmetadataMatrixKey097,release_record_label,release,itemprop=recordLabel,-,-,R,S,-,Schema label relation,Subject scope matters
+savedSHSmetadataMatrixKey098,release_catalog_number,release,dt Catalog number or itemprop=catalogNumber,-,-,R,S,-,Label catalog number,Not SHS entity ID
+savedSHSmetadataMatrixKey099,release_ean,release,dt EAN or table EAN,-,-,R,S,-,Barcode identifier,Edition-specific
+savedSHSmetadataMatrixKey100,release_artist,release,release artist credit,R,-,R,S,-,Artist credited on release,Distinct from track performer
+savedSHSmetadataMatrixKey101,release_track_listing,release,table Title Performer Release date,-,-,R,S,-,Embedded track/performance rows,Do not treat as captured pages
+savedSHSmetadataMatrixKey102,release_other_editions,relationship,dt Other edition of or Other editions,-,-,R,S,-,Release edition relationships,Exact IDs if linked
+savedSHSmetadataMatrixKey103,release_related_releases,relationship,dt Other release(s) or Related releases,-,-,R,S,-,Release links,Direction may vary
+savedSHSmetadataMatrixKey104,release_series,release,dt Part of series,-,-,-,S,-,Series membership,Preserve link context
+savedSHSmetadataMatrixKey105,release_tribute_to,release,dt Tribute to,-,-,-,S,-,Tribute release reference,Not performer identity
+savedSHSmetadataMatrixKey106,release_buy_link,release,dt Buy,-,-,-,S,-,Retail destination,External link may change
+savedSHSmetadataMatrixKey107,release_in_album,relationship,itemprop=inAlbum,-,R,S,R,-,Performance-to-release association,Do not infer issue details
+savedSHSmetadataMatrixKey108,external_spotify_track_id,provider_id,Spotify track URL regex,-,R,S,R,-,Linked Spotify track identifier,Provider scoped and URL-derived
+savedSHSmetadataMatrixKey109,external_youtube_video_id,provider_id,YouTube watch or youtu.be URL regex,-,R,S,R,-,Linked YouTube video identifier,Video is not recording identity
+savedSHSmetadataMatrixKey110,external_mb_artist_id,provider_id,MusicBrainz artist URL regex,S,R,R,R,-,Linked MB artist identifier,Requires reviewed cross-provider mapping
+savedSHSmetadataMatrixKey111,external_mb_recording_id,provider_id,MusicBrainz recording URL regex,-,R,R,R,-,Linked MB recording identifier,URL can refer to related entity
+savedSHSmetadataMatrixKey112,external_mb_work_id,provider_id,MusicBrainz work URL regex,-,R,R,R,-,Linked MB work identifier,Keep source locator
+savedSHSmetadataMatrixKey113,external_mb_release_id,provider_id,MusicBrainz release URL regex,-,R,R,R,-,Linked MB release identifier,Keep source locator
+savedSHSmetadataMatrixKey114,external_whosampled_id,provider_id,WhoSampled URL regex,-,R,R,R,-,Linked WhoSampled identifier,URL-derived only
+savedSHSmetadataMatrixKey115,head_meta_any,open_vocabulary,all head meta name/property/http-equiv/itemprop,G,G,G,G,G,Any saved head metadata including og and cyt,Not all keys are musical facts
+savedSHSmetadataMatrixKey116,head_link_any,open_vocabulary,all head link rel and href,G,G,G,G,G,Canonical alternate stylesheet and other links,Resource links may be technical
+savedSHSmetadataMatrixKey117,json_ld_or_json,open_vocabulary,script application/ld+json or application/json,G,G,G,G,G,Raw script plus parsed JSON when valid,Preserve invalid JSON raw text
+savedSHSmetadataMatrixKey118,microdata_any,open_vocabulary,all semantic itemprop/itemtype/RDFa nodes,G,G,G,G,G,Typed markup and enclosing scope,Same token can mean different roles
+savedSHSmetadataMatrixKey119,data_attribute_any,open_vocabulary,all data-* attributes,G,G,G,G,G,HTML attributes for audit/context,May be runtime state
+savedSHSmetadataMatrixKey120,definition_pair_any,open_vocabulary,main dt with sibling dd,G,G,G,G,G,Any visible labeled detail,Unknown labels stay generic
+savedSHSmetadataMatrixKey121,table_cell_any,open_vocabulary,main table row/column cell,G,G,G,G,G,All table text and headers,Use table heading and row context
+savedSHSmetadataMatrixKey122,table_date_sort,derived_date,Date or year table columns,G,G,G,G,G,Parsed date status sort value precision,Retain original display text
+savedSHSmetadataMatrixKey123,content_block_any,open_vocabulary,main headings paragraphs list items,G,G,G,G,G,Visible text with heading context,May be narrative rather than field
+savedSHSmetadataMatrixKey124,link_href_text_context,reference,all a[href],G,G,G,G,G,URL text title rel context count locator,Link alone is not captured page
+savedSHSmetadataMatrixKey125,linked_shs_entity_key,reference,anchor /artist|work|performance|release/ID,R,R,R,R,R,Typed referenced SHS ID,Distinguish linked-only and captured
+savedSHSmetadataMatrixKey126,link_resolution_status,reference,links.resolution_status,G,G,G,G,G,Local external ambiguous or unresolved,Do not force ambiguous targets
+savedSHSmetadataMatrixKey127,external_reference_url,reference,non-SHS content anchor,G,G,G,G,G,Source or corroborating webpage reference,Technical URLs may be excluded from CYT catalog
+savedSHSmetadataMatrixKey128,resource_url_metadata,resource,img/audio/video/source/iframe/object/embed/script/link,G,G,G,G,G,Resource URL alt title type rel attributes,Can be technical or decorative
+savedSHSmetadataMatrixKey129,artwork_image,resource,itemprop=image or img alt,R,R,R,R,G,Visual resource evidence,Offline transform may remove image
+savedSHSmetadataMatrixKey130,comments_notes,descriptive,dt Comments or Info,G,G,G,G,G,Visible descriptive text,Preserve prose and locator
+savedSHSmetadataMatrixKey131,additional_credits,descriptive,dt Additional credits,-,R,R,R,G,Further credit text,Preserve role wording
+savedSHSmetadataMatrixKey132,release_or_song_generic,descriptive,dt Release or Song,-,-,R,R,G,Unclassified visible label,Subject scope depends on page
+savedSHSmetadataMatrixKey133,visual_generic,descriptive,dt Visual,-,-,-,-,G,Visible visual reference,Not core music metadata
+savedSHSmetadataMatrixKey134,tags_genre,descriptive,dt Tags or itemprop=genre,G,G,G,G,G,Site tags or genre context,Taxonomy may be informal
+savedSHSmetadataMatrixKey135,rating_likes_views,site_metric,dt Rating Likes or Views,G,G,G,G,G,Site interaction metrics,Not musical identity
+savedSHSmetadataMatrixKey136,licensing,site_metadata,dt Licensing,G,G,G,G,G,Site licensing/status text,Not proof of reuse rights
+savedSHSmetadataMatrixKey137,source_reference_dynamic,reference,cyt:source-reference:* meta,G,G,G,G,G,Processed-page reference family,Dynamic keys are not fixed columns
+savedSHSmetadataMatrixKey138,review_issue,review,review_issues,G,G,G,G,G,Missing title identity conflict parse or challenge issue,Needs explicit disposition
+savedSHSmetadataMatrixKey139,review_decision,review,review_decisions,G,G,G,G,G,Recorded response to an issue,Keep prior event and application status

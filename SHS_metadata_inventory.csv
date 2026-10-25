@@ -1,0 +1,88 @@
+﻿SHSmetadataInventoryKey,category,metadata_field,extraction_marker_or_location,work,performance,artist,release,search_results,label_page,notes
+SHSmetadataInventoryKey001,identification,Original SHS URL / entity ID (G1),DOCTYPE comment 'saved from url=(NNNN)<url>',yes,yes,yes,yes,yes,yes,Reliable even when internal links were rewritten; gives /type/id
+SHSmetadataInventoryKey002,identification,Original SHS URL / entity ID (G1),meta[name=source-webpage-url],yes,yes,yes,yes,yes,yes,e.g. content='secondhandsongs.com/artist/394'
+SHSmetadataInventoryKey003,identification,Original entity ID (G3),cyt:file / cyt:metadata-version metas; rewritten local links ending '-<id>.html',yes,yes,yes,yes,no,no,cyt:metadata-version='html-derived-v4'
+SHSmetadataInventoryKey004,identification,Canonical URL,link[rel=canonical] or meta[property=og:url],yes,yes,yes,yes,no,no,Absolute secondhandsongs.com URL when present
+SHSmetadataInventoryKey005,identification,Title pattern - work,<title> 'Song: <Title> written by <Writers>' or 'Cover versions of <Title> written by ...',yes,no,no,no,no,no,'Cover versions of' title = work or performance /all variant
+SHSmetadataInventoryKey006,identification,Title pattern - performance,<title> 'Performance: <Title> by <Artist>' or 'Cover versions of <Title> by <Artist>',no,yes,no,no,no,no,
+SHSmetadataInventoryKey007,identification,Title pattern - artist,<title> '<ArtistName> | ...' with plain-text H1,no,no,yes,no,no,no,Only type whose H1 has no entity link
+SHSmetadataInventoryKey008,identification,Title pattern - release,"<title> 'Release: <Title> - <Artist> (<Month D, YYYY>)'",no,no,no,yes,no,no,
+SHSmetadataInventoryKey009,identification,Title pattern - search,<title> 'Search Results for \'<query>\'',no,no,no,no,yes,no,
+SHSmetadataInventoryKey010,identification,OpenGraph type,meta[property=og:type] = 'music.song',no,yes,no,no,no,no,Unique to performance pages
+SHSmetadataInventoryKey011,identification,Main microdata itemtype,itemscope itemtype directly under #content wrapper,yes,yes,yes,yes,no,no,work=MusicComposition; performance=MusicRecording; artist=Person|MusicGroup; release=MusicRelease
+SHSmetadataInventoryKey012,identification,H1 structure,#content-title h1,yes,yes,yes,yes,no,no,work/perf/release: linked title + optional 'by' artist; artist: plain h1[itemprop=name]
+SHSmetadataInventoryKey013,identification,Infobox dt-label signature,dt text set in #entity-info dl,yes,yes,yes,yes,no,no,"work:{Written by,Language,ISWC,Published by}; perf:{...,Released on,Chart placings,Tags}; artist:{Born,Country,IPI,...}; release:{Release date,Label,EAN,Format}"
+SHSmetadataInventoryKey014,identification,Filename convention,"filename (hint only, not ground truth)",yes,yes,yes,yes,no,no,CYT-<type>-...-<id>.html explicit; NN_title__perf<id>.html = performance; verify by content
+SHSmetadataInventoryKey015,identification,Ranking badge,h1 a.badge.bg-primary[href^=/statistics/],yes,no,no,no,no,no,e.g. '2nd in 1983'; links to /statistics/stats_work_covered?year=YYYY
+SHSmetadataInventoryKey016,identification,Site generation markers,see SHS_parsing_guide.md section 3,yes,yes,yes,yes,yes,yes,G1 saved-from+_files; G2 clean SecondHandSongs; G3 CoverCanvas+cyt: metas+rewritten links
+SHSmetadataInventoryKey017,head,Meta description (auto summary),meta[name=description],yes,yes,yes,yes,yes,no,'The song X was written by Y and was first released by Z in YYYY...' - usable as validation summary
+SHSmetadataInventoryKey018,head,Meta keywords,meta[name=keywords],yes,yes,yes,yes,yes,no,"Comma list: title, artists, 'Covers, Cover Songs, Samples, Tributes, Music'"
+SHSmetadataInventoryKey019,head,cyt:author (G3),meta[name=cyt:author],yes,yes,yes,yes,no,no,Injected by CYT pipeline; writer name on work/perf pages
+SHSmetadataInventoryKey020,head,OpenGraph title,meta[property=og:title],no,yes,no,no,no,no,'<Title> by <Artist>'
+SHSmetadataInventoryKey021,head,RSS / nav links,link[rel=alternate] etc.,yes,yes,yes,yes,yes,no,"Global site furniture, usually not data"
+SHSmetadataInventoryKey022,work,Work title,h1 span[itemprop=name] a[href^=/work/],yes,no,no,no,no,no,
+SHSmetadataInventoryKey023,work,Work entity ID,from /work/<id> URL,yes,no,no,no,no,no,
+SHSmetadataInventoryKey024,work,Yearly covered-rank,h1 a.badge text + href year param,yes,no,no,no,no,no,'2nd in 1983'
+SHSmetadataInventoryKey025,work,Writers / composers,dt 'Written by' dd span[itemprop=author] a[href^=/artist/],yes,yes,list,no,no,no,Multiple; each with artist ID + name; on artist page only inside 'Songs written by' section
+SHSmetadataInventoryKey026,work,Language,dd[itemprop=inLanguage],yes,yes,no,no,no,no,e.g. 'English'; also language badge on work panels in Versions
+SHSmetadataInventoryKey027,work,ISWC code(s),dt 'ISWC' dd; multiple <br/>-separated,yes,no,no,no,no,no,Each code annotated with societies in <small><em>
+SHSmetadataInventoryKey028,work,Publisher(s) + society annotations,dt 'Published by' dd,yes,no,no,no,no,no,e.g. 'SONGS OF UNIVERSAL INC' with BMI/GEMA tags
+SHSmetadataInventoryKey029,work,Original performances (First release etc.),section 'Originals' article[itemprop=recordingOf] section[itemprop=recordedAs],yes,yes,no,no,no,no,Role link ('First release') -> /performance/<id>; span[itemprop=byArtist]; year; YouTube link
+SHSmetadataInventoryKey030,work,Adaptations,h2.section-title 'Adaptations' list items,yes,yes,no,no,no,no,Notes like 'uses melody and arrangement'
+SHSmetadataInventoryKey031,work,Partial adaptations,h2.section-title 'Partial adaptations',yes,yes,no,no,no,no,
+SHSmetadataInventoryKey032,work,Versions (per related work),div[id^=root.entityTabs.workVersions] p.versions-table-header,yes,yes,no,no,no,no,Each panel: related /work/<id> + its writers + language badge
+SHSmetadataInventoryKey033,work,Version row: title/perf ID,versions table td.field-title a[href^=/performance/],yes,yes,no,list,no,no,On release page rows appear in Tracks table
+SHSmetadataInventoryKey034,work,Version row: performer,td.field-performer a[href^=/artist/],yes,yes,no,list,no,no,
+SHSmetadataInventoryKey035,work,Version row: release date,td.field-date,yes,yes,no,no,no,no,
+SHSmetadataInventoryKey036,work,Version row: instrumental flag,td.field-instrumental,yes,list,no,list,no,no,Perf page only in nested work versions; release Tracks table
+SHSmetadataInventoryKey037,work,Version row: info,td.field-info,yes,yes,no,no,no,no,
+SHSmetadataInventoryKey038,work,Version table vocals/instrumental split,div ids ending .vocals / instrumental,yes,yes,no,no,no,no,
+SHSmetadataInventoryKey039,work,Web covers,div.web-cover-grid div.web-cover (a[href*=youtube]),yes,yes,list,no,no,no,Artist page: 'Web Covers by <Name>' section
+SHSmetadataInventoryKey040,work,Forum topics,section 'Forum topics' links,yes,no,no,no,no,no,
+SHSmetadataInventoryKey041,performance,Performance title,h1 span[itemprop=name] a[href^=/performance/],no,yes,no,no,no,no,
+SHSmetadataInventoryKey042,performance,Performance entity ID,from /performance/<id> URL,no,yes,no,no,no,no,
+SHSmetadataInventoryKey043,performance,"Performing artist (ID, name)",h1 em 'by' + a[href^=/artist/]; span[itemprop=byArtist],no,yes,no,list,no,no,Release page: per-track; work Originals: byArtist
+SHSmetadataInventoryKey044,performance,"Released on (release ID, name, medium, year)",dt 'Released on' div[itemprop=inAlbum],no,yes,no,no,no,no,a[href^=/release/] + 'Album'/'Single' + year
+SHSmetadataInventoryKey045,performance,Chart placings,dt 'Chart placings' dd,no,yes,no,no,no,no,Free text: '#1 in United States'
+SHSmetadataInventoryKey046,performance,Tags,dt 'Tags' dd span.badge.tag a[href^=/search/performance?tag=],no,yes,no,no,no,no,e.g. 'hit song'
+SHSmetadataInventoryKey047,performance,Comments,dt 'Comments' dd (commentWidget),no,yes,yes,no,no,no,"User comments, not biography (artist page comments = bio)"
+SHSmetadataInventoryKey048,performance,Other version,dt 'Other version' dd,no,yes,no,no,no,no,Cross-link to alternate performance
+SHSmetadataInventoryKey049,performance,Streaming service links,div.streaming-service-links a[aria-label^='Listen on'],no,yes,no,no,no,no,YouTube / Apple Music / Spotify URLs
+SHSmetadataInventoryKey050,performance,Sampled by,h2.section-title 'Sampled by',no,yes,no,no,no,no,Also stated in meta description 'It is sampled by ...'
+SHSmetadataInventoryKey051,performance,Sampling sources,meta description 'It samples X and Y' / Originals context,no,yes,no,no,no,no,Free text in description
+SHSmetadataInventoryKey052,artist,Artist name,h1[itemprop=name],no,no,yes,no,no,no,
+SHSmetadataInventoryKey053,artist,Artist entity ID,from /artist/<id> URL,no,no,yes,no,no,no,
+SHSmetadataInventoryKey054,artist,Artist kind (person vs group),main itemscope itemtype Person|MusicGroup,no,no,yes,no,no,no,
+SHSmetadataInventoryKey055,artist,Personal / real name,dt 'Personal name' dd[itemprop=name],no,no,yes,no,no,no,e.g. 'Christopher Joseph Isaak'
+SHSmetadataInventoryKey056,artist,Birth date,dt 'Born' dd[itemprop=birthDate],no,no,yes,no,no,no,"'June 26, 1956'"
+SHSmetadataInventoryKey057,artist,Country (+ISO code),dt 'Country' dd[itemprop=nationality] a[href^=/search/artist?country=],no,no,yes,no,no,no,"Link carries ISO code (US, GB, ...); bands have country too"
+SHSmetadataInventoryKey058,artist,IPI number(s) + work counts,dt 'IPI' dd #root.ipis,no,no,yes,no,no,no,Multiple; each with '<em>N works</em>'
+SHSmetadataInventoryKey059,artist,PRO affiliation,dt 'Affiliation' dd,no,no,yes,no,no,no,e.g. ASCAP
+SHSmetadataInventoryKey060,artist,Aliases,dt 'Aliases' dd #root.aliases lines,no,no,yes,no,no,no,e.g. 'Soft White Underbelly'
+SHSmetadataInventoryKey061,artist,Band members,dt 'Members' dd,no,no,yes,no,no,no,Groups only
+SHSmetadataInventoryKey062,artist,Related artists,dt 'Related' dd,no,no,yes,no,no,no,
+SHSmetadataInventoryKey063,artist,Coverage ranking,dt 'Ranking' dd,no,no,yes,no,no,no,Free text
+SHSmetadataInventoryKey064,artist,Biography / comments,dt 'Comments' dd,no,no,yes,no,no,no,"'Singer, guitarist and actor from ...'"
+SHSmetadataInventoryKey065,artist,Originals list (works originated),section 'Originals',no,no,yes,no,no,no,
+SHSmetadataInventoryKey066,artist,Covers by artist,section 'Covers by <Name>',no,no,yes,no,no,no,
+SHSmetadataInventoryKey067,artist,Songs written (works authored),section 'Songs written by <Name>' > 'Original songs',no,no,yes,no,no,no,Work links + writer credit
+SHSmetadataInventoryKey068,artist,Releases: albums / singles / appearances,section 'Releases' h3 Albums|Singles|'Performances also appear on',no,no,yes,no,no,no,Release links with years
+SHSmetadataInventoryKey069,artist,Tributes,section 'Tributes',no,no,yes,no,no,no,Tribute albums/releases
+SHSmetadataInventoryKey070,artist,Web covers by artist,section 'Web Covers by <Name>',no,no,yes,no,no,no,
+SHSmetadataInventoryKey071,release,Release title,h1 span[itemprop=name] a[href^=/release/],no,no,no,yes,no,no,
+SHSmetadataInventoryKey072,release,Release entity ID,from /release/<id> URL,no,no,no,yes,no,no,
+SHSmetadataInventoryKey073,release,Release artist,h1 em 'by' + a[href^=/artist/],no,no,no,yes,no,no,
+SHSmetadataInventoryKey074,release,Release date,dt 'Release date' dd[itemprop=datePublished],no,no,no,yes,no,no,"'May 9, 2006'"
+SHSmetadataInventoryKey075,release,"Label (ID, name)",dt 'Label' span[itemprop=label] a[href^=/label/],no,no,no,yes,no,yes,"Label entity itself only referenced, not saved in collections"
+SHSmetadataInventoryKey076,release,EAN / barcode,dt 'EAN' dd,no,no,no,yes,no,no,'00 9362 49418 2 8'
+SHSmetadataInventoryKey077,release,Format (medium),dt 'Format' dd text + meta[itemprop=musicReleaseFormat],no,no,no,yes,no,no,Visible 'CD' + machine value 'CDFormat'
+SHSmetadataInventoryKey078,release,Track list (per track),#root.tracks table tr[itemprop=recordedAs],no,no,no,yes,no,no,"Columns: player, instrumental, title(/performance/), performer(/artist/), written by, info"
+SHSmetadataInventoryKey079,search,Query string,<title> 'Search Results for \'<q>\''; search input value,no,no,no,no,yes,no,
+SHSmetadataInventoryKey080,search,Grouped results by entity type,result sections + links /work|performance|artist|release/<id>,no,no,no,no,yes,no,Discovery glue: yields entity IDs to fetch
+SHSmetadataInventoryKey081,search,Contributions (editor results),section 'Contributions',no,no,no,no,yes,no,
+SHSmetadataInventoryKey082,search,Tag facet page,/search/performance?tag=<tag> (linked from perf Tags),no,ref,no,no,yes,no,Saved copies rare
+SHSmetadataInventoryKey083,search,Country facet page,/search/artist?country=XX (linked from artist Country),no,no,ref,no,no,yes,Saved copies rare
+SHSmetadataInventoryKey084,referenced,Label entity ID / name,/label/<id> links (only from release infobox),no,no,no,ref,no,yes,No standalone label saves observed in the 7 collections
+SHSmetadataInventoryKey085,referenced,Statistics page (yearly most-covered),/statistics/stats_work_covered?year=YYYY (badge href),ref,no,no,no,no,no,Rank badge text itself is on the work page
+SHSmetadataInventoryKey086,referenced,SHS forum topics,forum thread links,ref,no,no,no,no,no,
+SHSmetadataInventoryKey087,referenced,YouTube / external media IDs,a[href*=youtube|youtu.be] etc.,ref,yes,ref,no,no,no,"Web covers, Originals, streaming links"
